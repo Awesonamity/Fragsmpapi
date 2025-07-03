@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "id": "fragsmpapi",
+  "version": "${version}",
+  "name": "fragsmpapi",
+  "description": "Fragment smp api",
+  "authors": [],
+  "contact": {},
+  "license": "All-Rights-Reserved",
+  "icon": "assets/fragsmpapi/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "fabric-datagen": [
+      "dev.awesonamity.fragsmpapi.client.FragsmpapiDataGenerator"
+    ],
+    "client": [
+      "dev.awesonamity.fragsmpapi.client.FragsmpapiClient"
+    ],
+    "main": [
+      "dev.awesonamity.fragsmpapi.Fragsmpapi"
+    ]
+  },
+  "mixins": [
+    "fragsmpapi.mixins.json",
+    {
+      "config": "fragsmpapi.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
